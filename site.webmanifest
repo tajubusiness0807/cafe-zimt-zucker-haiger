@@ -1,0 +1,8 @@
+{
+  "name": "Café Zimt & Zucker",
+  "short_name": "Zimt & Zucker",
+  "icons": [{ "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }, { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#1c110c",
+  "background_color": "#f6eee3",
+  "display": "browser"
+}

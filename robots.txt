@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tajubusiness0807.github.io/cafe-zimt-zucker-haiger/sitemap.xml

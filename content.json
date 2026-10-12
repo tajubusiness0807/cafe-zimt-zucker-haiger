@@ -1,0 +1,70 @@
+{
+  "_hinweis": "Zentrale Inhaltsdatei. Nach Änderungen `node build.mjs` ausführen – erzeugt index.html neu. Felder mit \"status\": \"zu bestätigen\" werden nicht veröffentlicht.",
+
+  "site": {
+    "url": "https://tajubusiness0807.github.io/cafe-zimt-zucker-haiger/",
+    "indexierbar": false,
+    "_url": "Öffentliche Adresse der Seite (für Canonical, OG-Bild, Sitemap). Bei anderer Adresse hier anpassen und neu bauen.",
+    "_indexierbar": "Erst auf true setzen, wenn die Betreiberin die Seite freigegeben hat und Impressum/Datenschutz ergänzt sind. Bis dahin: noindex."
+  },
+
+  "name": "Café Zimt & Zucker",
+  "ort": "Haiger",
+  "kategorie": "Café",
+
+  "adresse": {
+    "strasse": "Mühlenstraße 4",
+    "plz": "35708",
+    "ort": "Haiger",
+    "region": "Hessen",
+    "land": "DE",
+    "pluscode": "P6R4+J2 Haiger",
+    "geo": { "lat": 50.7415359, "lng": 8.2050608 }
+  },
+
+  "telefon": {
+    "anzeige": "02773 7108919",
+    "international": "+49 2773 7108919",
+    "link": "tel:+4927737108919"
+  },
+
+  "merkmale": ["Von Frauen geführt", "Vor Ort genießen", "Zum Mitnehmen", "Lieferdienst"],
+
+  "oeffnungszeiten": {
+    "quelle": "Google Maps (vom Auftraggeber übermittelt)",
+    "hinweis": "An Feiertagen kann es Abweichungen geben – im Zweifel kurz anrufen.",
+    "tage": [
+      { "tag": "Montag", "kurz": "Mo", "zeit": null },
+      { "tag": "Dienstag", "kurz": "Di", "zeit": null },
+      { "tag": "Mittwoch", "kurz": "Mi", "zeit": "12:00–17:30" },
+      { "tag": "Donnerstag", "kurz": "Do", "zeit": "12:00–17:30" },
+      { "tag": "Freitag", "kurz": "Fr", "zeit": "12:00–17:30" },
+      { "tag": "Samstag", "kurz": "Sa", "zeit": "09:30–17:30" },
+      { "tag": "Sonntag", "kurz": "So", "zeit": "09:30–17:30" }
+    ],
+    "_konflikt": "11880 nennt am Wochenende 09:30–11:30 und 14:00–17:30. Vor Livegang mit dem Café klären. Bis dahin keine Öffnungszeiten in strukturierten Daten und kein „Jetzt geöffnet“-Status."
+  },
+
+  "angebot": [
+    { "id": "torten", "titel": "Torten & Kuchen", "text": "Torten und Kuchen zum Kaffee, von Gästen immer wieder gelobt – am Platz oder zum Mitnehmen.", "status": "belegt" },
+    { "id": "waffeln", "titel": "Waffeln", "text": "Bei Gästen besonders beliebt – warm, goldbraun und ideal für den Nachmittag.", "status": "belegt" },
+    { "id": "kaffee", "titel": "Kaffee & Cappuccino", "text": "Der Cappuccino gehört zu den Favoriten im Haus – passt zu allem, was süß ist.", "status": "belegt" },
+    { "id": "fruehstueck", "titel": "Frühstück", "text": "Gemütlich in den Tag starten – Gäste loben das Frühstück.", "status": "belegt" },
+    { "id": "mittag", "titel": "Mittagessen", "text": "Auch Herzhaftes zur Mittagszeit – für alle, die vor dem Kuchen etwas Warmes möchten.", "status": "belegt" }
+  ],
+  "angebot_hinweis": "Die aktuelle Auswahl erfahren Sie direkt im Café oder telefonisch.",
+
+  "rezensionen": [
+    { "text": "Sehr gemütliches kleines Café mit unglaublich leckeren Torten.", "quelle": "Google-Rezension" },
+    { "text": "Sehr schönes Cafe, leckerer selbst gebackener Kuchen, freundlicher Service.", "quelle": "Google-Rezension" },
+    { "text": "Leckeres Mittagessen 😊 Und wunderbare Torten und Kuchen 🍰 ein Gedicht .", "quelle": "Google-Rezension" }
+  ],
+
+  "zu_bestaetigen": {
+    "instagram": { "wert": "https://www.instagram.com/zimtzuckerhaiger/", "status": "zu bestätigen" },
+    "email": { "wert": null, "status": "zu bestätigen" },
+    "impressum": { "wert": null, "status": "zu bestätigen" },
+    "datenschutz": { "wert": null, "status": "zu bestätigen" },
+    "preise_speisekarte": { "wert": null, "status": "zu bestätigen" }
+  }
+}
