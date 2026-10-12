@@ -29,6 +29,7 @@ const ico = {
   heart: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20.3 4.7 13a4.6 4.6 0 0 1 6.5-6.5l.8.8.8-.8a4.6 4.6 0 0 1 6.5 6.5z"/></svg>',
   bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>',
   bike: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="16.5" r="3.5"/><circle cx="18" cy="16.5" r="3.5"/><path d="M6 16.5 9.5 9h6l2.5 7.5M9.5 9 8.5 6.5H6.5M12.5 16.5 15.5 9"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>',
   chair: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v10h10M7 13l-1 8M17 13l1 8M7 9h8"/></svg>',
 };
 const menuIco = {
@@ -70,6 +71,27 @@ const quotes = c.rezensionen.slice(0, 3).map((r, i) => `
 
 const chips = c.merkmale.map((m) => `<li>${merkmalIco[m] || ''}${esc(m)}</li>`).join('');
 
+const gallery = (c.galerie || []).filter((g) => g && g.datei);
+const igBtn = `<a class="btn" href="${c.instagram.url}" target="_blank" rel="noopener">${ico.instagram}<span>@${esc(c.instagram.handle)} folgen</span></a>`;
+const instaSection = `  <section class="section insta${gallery.length ? '' : ' insta--band'}" id="eindruecke" aria-labelledby="insta-title">
+    <div class="wrap">
+      <div class="insta__head">
+        <div>
+          <span class="eyebrow reveal">${ico.instagram}Instagram</span>
+          <h2 id="insta-title" class="reveal" data-delay="1">${gallery.length ? 'Eindrücke aus dem Café' : 'Neues aus dem Café'}</h2>
+          <p class="lede reveal" data-delay="2">Torten, Waffeln und Neuigkeiten aus dem Café – auf Instagram.</p>
+        </div>
+        <div class="reveal" data-delay="3">${igBtn}</div>
+      </div>${gallery.length ? `
+      <ul class="gallery">${gallery.map((g, i) => {
+        const base = g.datei.replace(/\.[a-z]+$/i, '');
+        return `
+        <li class="reveal" data-delay="${(i % 4) + 1}"><a href="${c.instagram.url}" target="_blank" rel="noopener" aria-label="${esc(g.alt)} – auf Instagram ansehen"><img src="${base}-800.webp" srcset="${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1200.webp 1200w" sizes="(max-width: 620px) 50vw, (max-width: 980px) 33vw, 300px" width="${g.breite || 800}" height="${g.hoehe || 800}" alt="${esc(g.alt)}" loading="lazy" decoding="async"></a></li>`;
+      }).join('')}
+      </ul>` : ''}
+    </div>
+  </section>`;
+
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'CafeOrCoffeeShop',
@@ -80,6 +102,7 @@ const jsonld = {
   address: { '@type': 'PostalAddress', streetAddress: a.strasse, postalCode: a.plz, addressLocality: a.ort, addressRegion: a.region, addressCountry: a.land },
   geo: { '@type': 'GeoCoordinates', latitude: a.geo.lat, longitude: a.geo.lng },
   hasMap: mapsPlace,
+  sameAs: [c.instagram.url],
   servesCuisine: ['Kaffee', 'Kuchen', 'Torten', 'Waffeln'],
 };
 
@@ -236,6 +259,8 @@ ${c.site.indexierbar ? '<meta name="robots" content="index, follow, max-image-pr
     </div>
   </section>
 
+${instaSection}
+
   <section class="section visit" id="besuch" aria-labelledby="besuch-title">
     <div class="wrap">
       <div class="section__head">
@@ -255,6 +280,7 @@ ${c.site.indexierbar ? '<meta name="robots" content="index, follow, max-image-pr
           <ul class="contact-list">
             <li><a href="${mapsDir}" target="_blank" rel="noopener"><span class="i">${ico.route}</span><span><span class="k">Google Maps</span><span class="v">Route planen</span></span>${ico.arrow}</a></li>
             <li><a href="${c.telefon.link}"><span class="i">${ico.phone}</span><span><span class="k">Telefon</span><span class="v">${esc(c.telefon.anzeige)}</span></span>${ico.arrow}</a></li>
+            <li><a href="${c.instagram.url}" target="_blank" rel="noopener"><span class="i">${ico.instagram}</span><span><span class="k">Instagram</span><span class="v">@${esc(c.instagram.handle)}</span></span>${ico.arrow}</a></li>
           </ul>
           <img class="deco" src="assets/img/cubes-sm.webp" width="311" height="227" alt="" loading="lazy" decoding="async" data-depth="0.4">
         </div>
@@ -270,12 +296,13 @@ ${c.site.indexierbar ? '<meta name="robots" content="index, follow, max-image-pr
       <div class="footer__cols">
         <p><span class="k">Adresse</span><a href="${mapsDir}" target="_blank" rel="noopener">${esc(a.strasse)}<br>${esc(a.plz)} ${esc(a.ort)}</a></p>
         <p><span class="k">Telefon</span><a href="${c.telefon.link}">${esc(c.telefon.anzeige)}</a></p>
+        <p><span class="k">Instagram</span><a href="${c.instagram.url}" target="_blank" rel="noopener">@${esc(c.instagram.handle)}</a></p>
         <p><span class="k">Geöffnet</span>Mi–Fr 12:00–17:30<br>Sa &amp; So 09:30–17:30</p>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© ${new Date().getFullYear()} ${esc(c.name)}, ${esc(a.ort)}</span>
-      <span>Bilder: digitale Illustrationen</span>
+      <span>${gallery.length ? `Fotos: @${esc(c.instagram.handle)} · Illustrationen: digital` : 'Bilder: digitale Illustrationen'}</span>
     </div>
   </div>
 </footer>

@@ -28,6 +28,15 @@
     "link": "tel:+4927737108919"
   },
 
+  "instagram": {
+    "handle": "zimtzuckerhaiger",
+    "url": "https://www.instagram.com/zimtzuckerhaiger/",
+    "status": "bestätigt (offizielles Profil laut Auftraggeber)"
+  },
+
+  "galerie": [],
+  "_galerie": "Fotos des Cafés (nur mit Erlaubnis des Cafés). Einträge: { \"datei\": \"assets/photos/name\", \"breite\": 1200, \"hoehe\": 1500, \"alt\": \"Beschreibung\" } – Bilder mit tools/photos.py vorbereiten. Leer = Instagram-Hinweis ohne Galerie.",
+
   "merkmale": ["Von Frauen geführt", "Vor Ort genießen", "Zum Mitnehmen", "Lieferdienst"],
 
   "oeffnungszeiten": {
@@ -61,7 +70,6 @@
   ],
 
   "zu_bestaetigen": {
-    "instagram": { "wert": "https://www.instagram.com/zimtzuckerhaiger/", "status": "zu bestätigen" },
     "email": { "wert": null, "status": "zu bestätigen" },
     "impressum": { "wert": null, "status": "zu bestätigen" },
     "datenschutz": { "wert": null, "status": "zu bestätigen" },

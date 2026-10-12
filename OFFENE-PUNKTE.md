@@ -9,9 +9,9 @@ Die Seite ist fertig gebaut, aber bis zur Freigabe durch das Café auf `noindex`
 - [ ] Feiertage, Betriebsferien, ggf. Frühstückszeiten
 - [ ] Angebot: Torten & Kuchen, Waffeln, Kaffee/Cappuccino, Frühstück, Mittagessen – stimmt das noch? Gibt es eine aktuelle Karte mit Preisen?
 - [ ] Lieferdienst: über welchen Weg/Anbieter? (Bisher nur als Merkmal aus Google übernommen)
-- [ ] Instagram `@zimtzuckerhaiger`: gehört das Profil zum Café? Erst dann verlinken
+- [x] Instagram `@zimtzuckerhaiger` – offizielles Profil, verlinkt
 - [ ] E-Mail-Adresse, ggf. Reservierungsablauf
-- [ ] Echte Fotos und ggf. vorhandenes Logo (die Seite nutzt eigens erstellte digitale Illustrationen und ein neu entworfenes Zimtstern-Zeichen)
+- [ ] Echte Fotos (z. B. aus dem Instagram-Profil – nur mit Erlaubnis des Cafés) per `python3 tools/photos.py …` einbinden; ggf. vorhandenes Logo (die Seite nutzt eigens erstellte digitale Illustrationen und ein neu entworfenes Zimtstern-Zeichen)
 
 ## Rechtlich nötig vor der Veröffentlichung
 
