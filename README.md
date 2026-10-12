@@ -10,7 +10,7 @@ Statischer Onepager für das Café Zimt & Zucker, Mühlenstraße 4, 35708 Haiger
 
 ## Veröffentlichen mit GitHub Pages
 
-1. Repository in `cafe-zimt-zucker-haiger` umbenennen (Settings → General), damit die Adresse `https://tajubusiness0807.github.io/cafe-zimt-zucker-haiger/` lautet. Andernfalls `site.url` in `content.json` anpassen und neu bauen.
+1. Repository heißt `cafe-zimt-zucker-haiger` – Adresse: `https://tajubusiness0807.github.io/cafe-zimt-zucker-haiger/`.
 2. Settings → Pages → Source: „Deploy from a branch“ → Branch mit dieser Seite, Ordner `/ (root)`.
 
 Vor dem Livegang: siehe [OFFENE-PUNKTE.md](OFFENE-PUNKTE.md).
